@@ -1,4 +1,15 @@
-package nl.numblock.puremvc.patterns.facade {	import nl.numblock.DebugInterests;	import nl.numblock.flowcharter.ConnectionEvent;	import nl.numblock.flowcharter.Main;	import nl.numblock.flowcharter.PuremvcObject;	import nl.numblock.flowcharter.SocketConnection;	import nl.numblock.flowcharter.constants.Notifications;	import nl.numblock.flowcharter.controller.ApplicationPrepCommand;	import nl.numblock.puremvc.core.FlowChartController;	import nl.numblock.puremvc.core.FlowChartView;	import nl.numblock.util.debug.Debugger;	import org.puremvc.as3.multicore.patterns.facade.Facade;	import org.puremvc.as3.multicore.patterns.observer.Notification;	public class FlowChartFacade extends Facade 	{		private var __connection 	: 	SocketConnection;
+package nl.numblock.puremvc.patterns.facade {
+	import nl.numblock.flowcharter.Main;
+	import nl.numblock.flowcharter.constants.Notifications;
+	import nl.numblock.flowcharter.controller.ApplicationPrepCommand;
+	import nl.numblock.puremvc.core.FlowChartController;
+	import nl.numblock.puremvc.core.FlowChartView;
+	import nl.numblock.puremvc.socket.ConnectionEvent;
+	import nl.numblock.puremvc.socket.PuremvcObject;
+	import nl.numblock.puremvc.socket.SocketConnection;
+
+	import org.puremvc.as3.multicore.patterns.facade.Facade;
+	import org.puremvc.as3.multicore.patterns.observer.Notification;	public class FlowChartFacade extends Facade 	{		private var __connection 	: 	SocketConnection;
 		private var __app 			: 	Main;
 		public function FlowChartFacade( key : String, _app : Main) 		{			super(key);			__app		=	_app;			initSocketConnection();		} 		private function initSocketConnection() : void 		{			__connection	=	SocketConnection.getInstance();			__connection.addEventListener(ConnectionEvent.SERVER_READY, onServerReady);		}
 

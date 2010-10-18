@@ -1,4 +1,4 @@
-package nl.numblock.flowcharter 
+package nl.numblock.puremvc.socket 
 {
 	import nl.numblock.util.data.vo.VO;
 

@@ -1,4 +1,4 @@
-package nl.numblock.flowcharter
+package nl.numblock.puremvc.socket
 {
 	import flash.events.EventDispatcher;
 	import nl.numblock.DebugInterests;
