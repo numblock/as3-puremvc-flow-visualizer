@@ -1,0 +1,1 @@
+package nl.numblock.util {	/**	 * @author Peter	 */	public class XMLUtils 	{		static public function addCData(content:String):String		{			return "<![CDATA["+content+"]]>";		}		static public function hasChildren(xmlNode:*):Boolean		{			return (xmlNode.children() != undefined);		}	}}

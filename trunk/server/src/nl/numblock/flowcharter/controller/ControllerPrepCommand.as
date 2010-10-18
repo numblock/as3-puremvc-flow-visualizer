@@ -1,0 +1,3 @@
+package nl.numblock.flowcharter.controller {	import nl.numblock.flowcharter.constants.Notifications;	import org.puremvc.as3.multicore.interfaces.INotification;	import org.puremvc.as3.multicore.patterns.command.SimpleCommand;	/**	 * Short description for file.	 *	 * @package    nl.numblock.flowcharter.controller	 * @author     numblock / 2010	 * @version    SVN: $Id$	*/	public class ControllerPrepCommand extends SimpleCommand	{		override public function execute(note: INotification) : void		{			 facade.registerCommand(Notifications.SERVER_OBJECT_RECEIVED, 	CreateUMLCommand);
+			facade.registerCommand(Notifications.APPLICATION_EXITING, 		ExitApplicationCommand);
+			facade.registerCommand(Notifications.STARTUP, 					StartUpCommand);		}	}}
