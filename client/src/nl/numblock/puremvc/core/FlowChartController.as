@@ -1,15 +1,14 @@
 package nl.numblock.puremvc.core 
 {
-	import flash.utils.getQualifiedClassName;
-	import nl.numblock.flowcharter.PuremvcObject;
-	import nl.numblock.DebugInterests;
-	import nl.numblock.flowcharter.SocketConnection;
-	import nl.numblock.util.debug.Debugger;
+	import nl.numblock.puremvc.socket.PuremvcObject;
+	import nl.numblock.puremvc.socket.SocketConnection;
 
 	import org.puremvc.as3.multicore.core.Controller;
 	import org.puremvc.as3.multicore.interfaces.ICommand;
 	import org.puremvc.as3.multicore.interfaces.IController;
 	import org.puremvc.as3.multicore.interfaces.INotification;
+
+	import flash.utils.getQualifiedClassName;
 
 	/**
 	 * @author numblock

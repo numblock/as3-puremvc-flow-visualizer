@@ -1,7 +1,7 @@
 package nl.numblock.puremvc.core 
 {
-	import nl.numblock.flowcharter.PuremvcObject;
-	import nl.numblock.flowcharter.SocketConnection;
+	import nl.numblock.puremvc.socket.PuremvcObject;
+	import nl.numblock.puremvc.socket.SocketConnection;
 
 	import org.puremvc.as3.multicore.core.View;
 	import org.puremvc.as3.multicore.interfaces.IMediator;
