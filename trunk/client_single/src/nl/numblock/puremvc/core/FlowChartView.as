@@ -3,11 +3,11 @@ package nl.numblock.puremvc.core
 	import nl.numblock.puremvc.socket.PuremvcObject;
 	import nl.numblock.puremvc.socket.SocketConnection;
 
-	import org.puremvc.as3.multicore.core.View;
-	import org.puremvc.as3.multicore.interfaces.IMediator;
-	import org.puremvc.as3.multicore.interfaces.INotification;
-	import org.puremvc.as3.multicore.interfaces.IObserver;
-	import org.puremvc.as3.multicore.interfaces.IView;
+	import org.puremvc.as3.core.View;
+	import org.puremvc.as3.interfaces.IMediator;
+	import org.puremvc.as3.interfaces.INotification;
+	import org.puremvc.as3.interfaces.IObserver;
+	import org.puremvc.as3.interfaces.IView;
 
 	import flash.utils.getQualifiedClassName;
 
@@ -16,15 +16,15 @@ package nl.numblock.puremvc.core
 	 */
 	public class FlowChartView extends View 
 	{
-		public function FlowChartView(key : String)
+		public function FlowChartView()
 		{
-			super(key);
+			super();
 		}
 		
-		public static function getInstance( key:String ) : IView 
+		public static function getInstance( ) : IView 
 		{
-			if ( instanceMap[ key ] == null ) instanceMap[ key ] = new FlowChartView( key );
-			return instanceMap[ key ];
+			if ( instance == null ) instance = new FlowChartView( );
+			return instance;
 		}
 		
 		override public function notifyObservers( notification:INotification ) : void

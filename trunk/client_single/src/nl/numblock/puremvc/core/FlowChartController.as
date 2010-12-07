@@ -3,10 +3,10 @@ package nl.numblock.puremvc.core
 	import nl.numblock.puremvc.socket.PuremvcObject;
 	import nl.numblock.puremvc.socket.SocketConnection;
 
-	import org.puremvc.as3.multicore.core.Controller;
-	import org.puremvc.as3.multicore.interfaces.ICommand;
-	import org.puremvc.as3.multicore.interfaces.IController;
-	import org.puremvc.as3.multicore.interfaces.INotification;
+	import org.puremvc.as3.core.Controller;
+	import org.puremvc.as3.interfaces.ICommand;
+	import org.puremvc.as3.interfaces.IController;
+	import org.puremvc.as3.interfaces.INotification;
 
 	import flash.utils.getQualifiedClassName;
 
@@ -15,20 +15,20 @@ package nl.numblock.puremvc.core
 	 */
 	public class FlowChartController extends Controller 
 	{
-		public function FlowChartController(key : String)
+		public function FlowChartController()
 		{
-			super(key);
+			super();
 		}
 		
 		override protected function initializeController(  ) : void 
 		{
-			view = FlowChartView.getInstance( multitonKey );
+			view = FlowChartView.getInstance( );
 		}
 		
-		public static function getInstance( key:String ) : IController
+		public static function getInstance() : IController
 		{
-			if ( instanceMap[ key ] == null ) instanceMap[ key ] = new FlowChartController( key );
-			return instanceMap[ key ];
+			if ( instance == null ) instance = new FlowChartController( );
+			return instance;
 		}
 		
 		override public function executeCommand( note : INotification ) : void
@@ -45,7 +45,6 @@ package nl.numblock.puremvc.core
 			data.noteName								=	note.getName();
 			connection.sendObject(data);
 			
-			commandInstance.initializeNotifier( multitonKey );
 			commandInstance.execute( note );
 		}
 	}
